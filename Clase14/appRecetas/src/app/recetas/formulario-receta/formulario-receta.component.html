@@ -1,0 +1,27 @@
+<mat-toolbar color="warn">
+  <h1 mat-dialog-title>{{titulo}}</h1>
+</mat-toolbar>
+<div class="mat-dialog-content">
+  <form [formGroup]="grupo" fxLayout="column">
+    <mat-form-field>
+      <input type="text" name="tituloEspanol" formControlName="tituloEspanol" placeholder="Título en español"
+        matInput="" required="required">
+      <mat-error>El título en español es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" name="tituloIngles" formControlName="tituloIngles" placeholder="Título en inglés" matInput=""
+        required="required">
+      <mat-error>El título en inglés es requerido</mat-error>
+    </mat-form-field>
+    <div>
+      <input type="file" placeholder="Imagen" name="imagenes" (change)="nuevaImagen($event)">
+    </div>
+    <div *ngIf="archivo">
+      <img [src]="archivo" alt="">
+    </div>
+    <div fxLayout fxLayoutAlign="center" fxLayoutGap="10px">
+      <button mat-raised-button (click)="guardar()" color="primary" [disabled]="grupo.invalid">Guardar</button>
+      <button mat-stroked-button mat-dialog-close color="warn">Cerrar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,133 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$mat-naranja: (
+    50 : #fcf2e7,
+    100 : #f8dec3,
+    200 : #f3c89c,
+    300 : #eeb274,
+    400 : #eaa256,
+    500 : #e69138,
+    600 : #e38932,
+    700 : #df7e2b,
+    800 : #db7424,
+    900 : #d56217,
+    A100 : #ffffff,
+    A200 : #ffe3d4,
+    A400 : #ffc3a1,
+    A700 : #ffb287,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-amarillo: (
+    50 : #fef7e6,
+    100 : #fbecc1,
+    200 : #f9df97,
+    300 : #f7d26d,
+    400 : #f5c94e,
+    500 : #f3bf2f,
+    600 : #f1b92a,
+    700 : #efb123,
+    800 : #eda91d,
+    900 : #ea9b12,
+    A100 : #ffffff,
+    A200 : #fff5e5,
+    A400 : #ffe0b2,
+    A700 : #ffd698,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-celeste: (
+    50 : #e1eef3,
+    100 : #b5d5e0,
+    200 : #83bacc,
+    300 : #519eb8,
+    400 : #2c89a8,
+    500 : #077499,
+    600 : #066c91,
+    700 : #056186,
+    800 : #04577c,
+    900 : #02446b,
+    A100 : #9ad4ff,
+    A200 : #67beff,
+    A400 : #34a8ff,
+    A700 : #1a9dff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$appRecetas-primary: mat-palette($mat-naranja);
+$appRecetas-accent: mat-palette($mat-amarillo, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$appRecetas-warn: mat-palette($mat-celeste);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$appRecetas-theme: mat-light-theme($appRecetas-primary, $appRecetas-accent, $appRecetas-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($appRecetas-theme);
+

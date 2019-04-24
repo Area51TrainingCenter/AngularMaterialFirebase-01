@@ -1,0 +1,21 @@
+.miClase {
+	width:400px
+}
+
+.miClase .mat-dialog-container {
+	padding: 0;
+}
+
+.miClase .mat-dialog-container .mat-toolbar {
+		flex: 1 0 auto;
+		min-height: initial;
+	}
+
+.miClase .mat-dialog-content {
+	padding: 12px 24px !important;
+	margin: 0
+}
+
+img {
+  max-width: 100%
+}

@@ -1,0 +1,15 @@
+.confirmacion {
+	width: 400px;
+  }
+  .confirmacion .mat-dialog-container {
+	padding: 0 0 24px 0
+  }
+  
+  .confirmacion .mat-dialog-content {
+	margin:0;
+  }
+  
+  .confirmacion .mat-dialog-content .titulo {
+		padding:32px;
+	  text-align: center
+  }

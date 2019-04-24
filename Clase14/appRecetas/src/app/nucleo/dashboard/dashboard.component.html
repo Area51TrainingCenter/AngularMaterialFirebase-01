@@ -1,0 +1,16 @@
+<div fxLayout fxLayoutAlign="center">
+  <mat-grid-list cols="4" fxFlex="90%">
+    <mat-grid-tile [colspan]="indicador1" rowspan="1" [style.background]="'skyblue'">
+      <!--       <div class="selectorRango" fxLayout fxLayoutAlign="end">
+        <mat-select [(value)]="rango">
+          <mat-option [value]="1">Últimos 30 días</mat-option>
+          <mat-option [value]="2">Últimos 7 días</mat-option>
+        </mat-select>
+      </div> -->
+      Indicador de recetas vistas
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="indicador2" rowspan="1" [style.background]="'grey'">
+      Indicador top 10 de recetas
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,71 @@
+<mat-sidenav-container>
+  <mat-sidenav #menuLateral mode="push">
+    <mat-nav-list>
+      <h6>Dashboard</h6>
+      <a mat-list-item routerLink="dashboard" (click)="menuLateral.close()">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <h6>recetas</h6>
+      <a mat-list-item routerLink="recetas" (click)="menuLateral.close()">
+        <mat-icon>list</mat-icon>
+        <span>Recetas</span>
+      </a>
+      <a mat-list-item routerLink="recetas/categorias" (click)="menuLateral.close()">
+        <mat-icon>category</mat-icon>
+        <span>Categorías</span>
+      </a>
+      <a mat-list-item routerLink="recetas/comentarios" (click)="menuLateral.close()">
+        <mat-icon>comment</mat-icon>
+        <span>Comentarios</span>
+      </a>
+      <h6>Usuarios</h6>
+      <a mat-list-item routerLink="usuarios/sistema" (click)="menuLateral.close()">
+        <mat-icon>face</mat-icon>
+        <span>Usuarios - Sistema</span>
+      </a>
+      <a mat-list-item routerLink="usuarios/portal" (click)="menuLateral.close()">
+        <mat-icon>face</mat-icon>
+        <span>Usuarios - Portal</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" fxLayout *ngIf="usuarioAutenticado">
+      <button mat-icon-button (click)="menuLateral.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>CMS PORTAL DE RECETAS</h1>
+      <div fxLayout fxLayoutAlign="end center" fxFlex>
+        <button mat-icon-button [matMenuTriggerFor]="menuContextual">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menuContextual>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>lock</mat-icon>
+            Cerrar sesión
+          </button>
+          <button mat-menu-item (click)="suscribirse()">
+            <mat-icon>wifi_tethering</mat-icon>
+            Suscribirse
+          </button>
+          <button mat-menu-item (click)="desuscribirse()">
+            <mat-icon>cloud_off</mat-icon>
+            Desuscribirse
+          </button>
+          <button mat-menu-item (click)="escuchar()">
+            <mat-icon>bluetooth_audio</mat-icon>
+            Escuchar notificaciones
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+    <!-- 		<div class="cssload-thecube" *ngIf="cargandoRuta">
+			<div class="cssload-cube cssload-c1"></div>
+			<div class="cssload-cube cssload-c2"></div>
+			<div class="cssload-cube cssload-c4"></div>
+			<div class="cssload-cube cssload-c3"></div>
+		</div> -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

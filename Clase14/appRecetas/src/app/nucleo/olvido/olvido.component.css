@@ -1,0 +1,23 @@
+.contenedor {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../../../assets/img/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+mat-card {
+  background-color: #f3c89c;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline
+}

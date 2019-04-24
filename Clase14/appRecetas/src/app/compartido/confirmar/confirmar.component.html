@@ -1,0 +1,15 @@
+<mat-toolbar color="warn">
+	<h1>Confirmación</h1>
+</mat-toolbar>
+<div mat-dialog-content>
+	<div mat-dialog-header class="titulo">
+		{{mensaje}}
+	</div>
+</div>
+<div mat-dialog-actions fxLayout fxLayoutAlign="center" fxLayoutGap="10px">
+	<button mat-raised-button color="primary" mat-dialog-close="true">Sí</button>
+	<button mat-stroked-button color="warn" mat-dialog-close>
+		<mat-icon>delete</mat-icon>
+		No
+	</button>
+</div>

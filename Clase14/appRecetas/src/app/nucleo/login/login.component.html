@@ -1,0 +1,37 @@
+<div class="contenedor" fxLayout fxLayoutAlign="center center">
+  <mat-card color="primary" fxFlex.lt-sm="300px" fxFlex="400px">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form (ngSubmit)="login()" [formGroup]="grupo">
+      <mat-card-content fxLayout="column">
+        <mat-form-field>
+          <input type="text" placeholder="Correo" formControlName="correo" name="correo" required matInput>
+          <mat-error *ngIf="grupo.get('correo').hasError('required') && grupo.get('correo').touched">
+            El correo es requerido
+          </mat-error>
+          <mat-error *ngIf="grupo.get('correo').hasError('email') && grupo.get('correo').touched">
+            Debe tener formato de correo
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="password" placeholder="Contraseña" name="contrasena" formControlName="contrasena" required
+            matInput>
+          <mat-error *ngIf="grupo.get('contrasena').hasError('required') && grupo.get('contrasena').touched">
+            La contraseña es requerida
+          </mat-error>
+        </mat-form-field>
+        <mat-card-actions fxLayout="column" fxLayoutAlign="center">
+          <button mat-raised-button color="primary" [disabled]="grupo.invalid">
+            Login
+          </button>
+          <h4>ó</h4>
+          <button type="button" class="loginGoogle" mat-raised-button (click)="loginGoogle()">Login con Google</button>
+        </mat-card-actions>
+        <div fxLayout fxLayoutAlign="center">
+          <a routerLink="/olvido">¿Olvidó la contraseña?</a>
+        </div>
+      </mat-card-content>
+    </form>
+  </mat-card>
+</div>

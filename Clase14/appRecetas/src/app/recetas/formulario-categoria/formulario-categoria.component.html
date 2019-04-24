@@ -1,0 +1,21 @@
+<mat-toolbar color="warn">
+	<h1 mat-dialog-title>{{titulo}}</h1>
+</mat-toolbar>
+<div class="mat-dialog-content">
+	<form [formGroup]="grupo" fxLayout="column">
+		<mat-form-field>
+			<input type="text" name="nombreEspanol" formControlName="nombreEspanol" placeholder="Categoría en español"
+				matInput="" required="required">
+			<mat-error>La categoría en español es requerida</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<input type="text" name="nombreIngles" formControlName="nombreIngles" placeholder="Categoría en inglés"
+				matInput="" required="required">
+			<mat-error>La categoría en inglés es requerida</mat-error>
+		</mat-form-field>
+		<div fxLayout fxLayoutAlign="center" fxLayoutGap="10px">
+			<button mat-raised-button (click)="guardar()" color="primary" [disabled]="grupo.invalid">Guardar</button>
+			<button mat-stroked-button mat-dialog-close color="warn">Cerrar</button>
+		</div>
+	</form>
+</div>
