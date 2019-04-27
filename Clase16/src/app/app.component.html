@@ -1,0 +1,51 @@
+<div *ngIf="usuarioLogueado">
+  <button mat-raised-button color="primary" (click)="suscribir()">
+    <mat-icon>face</mat-icon>
+    Suscribirse
+  </button>
+  <button mat-raised-button color="accent" (click)="desuscribir()">
+    <mat-icon>account_circle</mat-icon>
+    Desuscribirse
+  </button>
+  <button mat-button (click)="escuchar()">Escuchar</button>
+  <button mat-raised-button color="warn" (click)="logout()">
+    <mat-icon>lock</mat-icon>
+    Logout
+  </button>
+</div>
+<div fxLayout fxLayoutAlign="center">
+
+  <mat-card fxFlex="400px" *ngIf="registro && !usuarioLogueado">
+    <form (ngSubmit)="registrar()" [formGroup]="grupo" fxLayout="column">
+      <h2>Registro</h2>
+      <mat-form-field>
+        <input type="text" placeholder="Correo" matInput name="correo" formControlName="correo" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" placeholder="Contraseña" matInput name="contrasena" formControlName="contrasena"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-flat-button color="warn" [disabled]="grupo.invalid">Registrar</button>
+        <button type="button" mat-button (click)="registro=!registro">Ir al Login</button>
+      </div>
+    </form>
+  </mat-card>
+
+  <mat-card fxFlex="400px" *ngIf="!registro && !usuarioLogueado">
+    <form (ngSubmit)="loguear()" [formGroup]="grupoLogin" fxLayout="column">
+      <h2>Login</h2>
+      <mat-form-field>
+        <input type="text" placeholder="Correo" matInput name="correo" formControlName="correo" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" placeholder="Contraseña" matInput name="contrasena" formControlName="contrasena"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-flat-button color="warn" [disabled]="grupoLogin.invalid">Ingresar</button>
+        <button type="button" mat-button (click)="registro=!registro">Ir al Registro</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
